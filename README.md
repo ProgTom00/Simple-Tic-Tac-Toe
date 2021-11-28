@@ -11,7 +11,7 @@
 * [Setup](#Setup)
 
 ## General info
-I present you a simple game called tic-tac-toe. The game is created for two players.
+I present to you a simple game called tic-tac-toe. The game is created for two players.
 
 ## Game navigation
 To navigate through the game, just follow the options. You will use coordinates to play the game.
