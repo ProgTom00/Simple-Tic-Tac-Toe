@@ -46,7 +46,7 @@ public class SimpleTicTacToe {
             col = scanner.nextInt();
 
             if (row > 3 || col > 3) {
-                System.out.println("Coordinates should be from 1 to 3");
+                System.out.println("Coordinates should be from 1 to 3!");
                 enterInput();
             }
         } catch (InputMismatchException e) {
