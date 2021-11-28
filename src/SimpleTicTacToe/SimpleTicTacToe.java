@@ -37,32 +37,34 @@ public class SimpleTicTacToe {
         System.out.println("---------");
     }
 
-    private void enterInput(Scanner scanner) {
+    private void enterInput() {
         System.out.println("Enter the coordinates: ");
 
         try {
+            Scanner scanner = new Scanner(System.in);
             row = scanner.nextInt();
             col = scanner.nextInt();
 
             if (row > 3 || col > 3) {
                 System.out.println("Coordinates should be from 1 to 3");
-                enterInput(scanner);
+                enterInput();
             }
         } catch (InputMismatchException e) {
             System.out.println("You should enter a number!");
-            enterInput(scanner);
+            enterInput();
+
         }
     }
 
-    private boolean executeMove(char[][] gameGrid, char activePlayer, Scanner scanner) {
-        enterInput(scanner);
+    private boolean executeMove(char[][] gameGrid, char activePlayer) {
+        enterInput();
 
         if (gameGrid[row - 1][col - 1] == ' ') {
             gameGrid[row - 1][col - 1] = activePlayer;
             return true;
         }
         checkOccupied();
-        executeMove(gameGrid, activePlayer, scanner);
+        executeMove(gameGrid, activePlayer);
         return true;
     }
 
@@ -104,11 +106,10 @@ public class SimpleTicTacToe {
     }
 
     public void playGame() {
-        Scanner scanner = new Scanner(System.in);
         pos = 0;
         while (pos < 9 && !won) {
             printBoard();
-            boolean move = executeMove(gameGrid, activePlayer, scanner);
+            boolean move = executeMove(gameGrid, activePlayer);
 
             if (move) {
                 pos++;
@@ -116,18 +117,15 @@ public class SimpleTicTacToe {
                 if (won) {
                     printBoard();
                     printWinner();
-                    scanner.close();
                     break;
                 }
                 changePlayer();
             }
         }
-
         if (!won) {
             printBoard();
             System.out.println("Draw");
         }
-        scanner.close();
     }
 
     private void printWinner() {
