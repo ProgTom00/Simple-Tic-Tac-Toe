@@ -27,7 +27,7 @@ The coordinates must be entered as in the table below, where (1,1) is the top le
 (2,1) (2,2) (2,3)
 (3,1) (3,2) (3,3)
 ```
- 
+
 If the user enters non-numeric symbols in the coordinates input, or the user enters coordinates outside the 
 game grid or if the cell is not empty error occurs. The player must enter the correct coordinates to continue the game.
 If player entered correct coordinates, next move will make opponent. The game ends when someone wins or there is a draw.
